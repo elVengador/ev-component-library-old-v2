@@ -4,37 +4,40 @@ import {
 } from "react-aria-components";
 import { twMerge } from "tailwind-merge";
 
+type ButtonVariant = "solid" | "flat";
+type ButtonColor =
+  | "primary"
+  | "secondary"
+  | "destructive"
+  | "foreground"
+  | "background";
+
 export interface IconButtonProps extends RACButtonProps {
-  variant?: "solid" | "flat";
-  color?: "primary" | "secondary" | "destructive" | "foreground" | "background";
+  variant?: ButtonVariant;
+  color?: ButtonColor;
 }
 
-const styleIt = (props: IconButtonProps) => {
-  const base = "w-[32px] h-[32px] rounded-md";
-  // flat variant
-  if (props.variant === "flat" && props.color === "primary")
-    return `${base} bg-transparent hover:bg-gray-200 hover:dark:bg-gray-800 pressed:bg-gray-400 pressed:dark:bg-gray-600 text-cyan-600`;
-  if (props.variant === "flat" && props.color === "secondary")
-    return `${base} bg-transparent hover:bg-gray-200 hover:dark:bg-gray-800 pressed:bg-gray-400 pressed:dark:bg-gray-600 text-orange-600`;
-  if (props.variant === "flat" && props.color === "destructive")
-    return `${base} bg-transparent hover:bg-gray-200 hover:dark:bg-gray-800 pressed:bg-gray-400 pressed:dark:bg-gray-600 text-red-700`;
-  if (props.variant === "flat" && props.color === "foreground")
-    return `${base} bg-transparent hover:bg-gray-100 hover:dark:bg-gray-600 pressed:bg-gray-400 pressed:dark:bg-gray-600 text-black dark:text-white`;
-  if (props.variant === "flat" && props.color === "background")
-    return `${base} bg-transparent hover:bg-gray-800 hover:dark:bg-gray-200 pressed:bg-gray-700 pressed:dark:bg-gray-300 text-white dark:text-dark`;
+const baseStyles = "w-[32px] h-[32px] rounded-md";
 
-  // solid variant
-  if (props.variant === "solid" && props.color === "primary")
-    return `${base} bg-cyan-600 hover:bg-cyan-700 pressed:bg-cyan-800 text-white`;
-  if (props.variant === "solid" && props.color === "secondary")
-    return `${base} bg-orange-600 hover:bg-orange-700 pressed:bg-orange-800 text-white`;
-  if (props.variant === "solid" && props.color === "destructive")
-    return `${base} bg-red-700 hover:bg-red-800 pressed:bg-red-900 text-white`;
-  if (props.variant === "solid" && props.color === "foreground")
-    return `${base} bg-white hover:bg-gray-200 hover:dark:bg-grey-100 pressed:bg-gray-400 pressed:dark:bg-gray-600 text-black dark:text-white`;
-  if (props.variant === "solid" && props.color === "background")
-    return `${base} bg-transparent hover:bg-gray-800 hover:dark:bg-gray-200 pressed:bg-gray-700 pressed:dark:bg-gray-300 text-white dark:text-dark`;
+const styles: { [key in ButtonVariant]: { [key in ButtonColor]: string } } = {
+  flat: {
+    primary: `${baseStyles} bg-transparent text-ev-primary hover:bg-gray-200 pressed:bg-gray-300 hover:dark:bg-gray-800  pressed:dark:bg-gray-700`,
+    secondary: `${baseStyles} bg-transparent text-ev-secondary hover:bg-gray-200 pressed:bg-gray-300 hover:dark:bg-gray-800  pressed:dark:bg-gray-700`,
+    destructive: `${baseStyles} bg-transparent text-ev-destructive hover:bg-gray-200 pressed:bg-gray-300 hover:dark:bg-gray-800  pressed:dark:bg-gray-700`,
+    foreground: `${baseStyles} bg-transparent text-ev-dark hover:bg-gray-200 pressed:bg-gray-300 dark:text-ev-light hover:dark:bg-gray-800  pressed:dark:bg-gray-700`,
+    background: `${baseStyles} bg-transparent text-ev-light hover:bg-gray-800 pressed:bg-gray-700 dark:text-ev-dark hover:dark:bg-gray-200  pressed:dark:bg-gray-300`,
+  },
+  solid: {
+    primary: `${baseStyles} bg-ev-primary hover:bg-cyan-600 pressed:bg-cyan-700 text-white`,
+    secondary: `${baseStyles} bg-ev-secondary hover:bg-orange-600 pressed:bg-orange-700 text-white`,
+    destructive: `${baseStyles} bg-ev-destructive hover:bg-red-600 pressed:bg-red-700 text-white`,
+    foreground: `${baseStyles} bg-ev-dark text-ev-light hover:bg-gray-700 pressed:bg-gray-600 dark:bg-ev-light dark:text-ev-dark dark:hover:bg-gray-200  dark:pressed:bg-gray-300`,
+    background: `${baseStyles} bg-ev-light text-ev-dark hover:bg-gray-200 pressed:bg-gray-300 dark:bg-ev-dark dark:text-ev-light hover:dark:bg-gray-700  pressed:dark:bg-gray-600`,
+  },
 };
+
+const styleIt = ({ variant = "solid", color = "primary" }: IconButtonProps) =>
+  styles[variant][color];
 
 export const IconButton = (props: IconButtonProps) => {
   return (

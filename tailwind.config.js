@@ -3,6 +3,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    // ".storybook/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -25,7 +26,7 @@ export default {
       },
     },
   },
-  darkMode: ['class', '[data-mode="dark"]'],
+  darkMode: 'class',
   plugins: [require('tailwindcss-react-aria-components')],
   purge: {
     enabled: process.env.NODE_ENV === 'publish',
