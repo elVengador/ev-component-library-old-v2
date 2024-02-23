@@ -1,24 +1,23 @@
+import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   Link as AriaLink,
   type LinkProps as AriaLinkProps,
 } from "react-aria-components";
 import { twMerge } from "tailwind-merge";
 
-export type LinkProps = AriaLinkProps & {
-  color?: "primary" | "secondary" | "foreground" | "background";
-};
+type LinkColor = "primary" | "secondary";
 
-// TODO: manage disable
-// TODO: manage focus
+export type LinkProps = AriaLinkProps & { color?: LinkColor };
 
-const styleIt = ({ color = "primary" }: LinkProps) => {
-  const base =
-    "underline decoration-dashed px-2 py-1 rounded hover:decoration-solid";
-  if (color === "primary") return `${base} text-ev-green`;
-  if (color === "secondary") return `${base} text-ev-orange`;
-  if (color === "foreground") return `${base} text-ev-dark dark:text-ev-light`;
-  if (color === "background") return `${base} text-ev-light dark:text-ev-dark`;
+const baseStyles =
+  "underline decoration-dashed px-2 py-1 rounded hover:decoration-solid";
+
+const styles: { [key in LinkColor]: string } = {
+  primary: `${baseStyles} text-ev-primary`,
+  secondary: `${baseStyles} text-ev-secondary`,
 };
+const styleIt = ({ color = "primary" }: LinkProps) => styles[color];
 
 export const Link = (props: LinkProps) => {
   return (
@@ -27,7 +26,8 @@ export const Link = (props: LinkProps) => {
       {...(props.target === "_blank" && {
         children: (
           <>
-            <i className="fa-solid fa-link mr-2"></i>
+            {/* <i className="fa-solid fa-link mr-2"></i> */}
+            <FontAwesomeIcon icon={faLink} className="mr-2" />
             {props.children}
           </>
         ),

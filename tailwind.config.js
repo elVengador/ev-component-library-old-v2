@@ -1,3 +1,6 @@
+
+const colors = require('tailwindcss/colors')
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -8,21 +11,31 @@ export default {
   theme: {
     extend: {
       colors: {
-        "ev-primary": "#499AAC",
-        "ev-primary-darker": "#499AAC",
-        "ev-primary-lighter": "#499AAC",
-        "ev-secondary": "#DE7A4F",
-        "ev-secondary-darker": "#DE7A4F",
-        "ev-secondary-lighter": "#DE7A4F",
-        "ev-dark": "#1C1C1C",
-        "ev-dark-darker": "#1C1C1C",
-        "ev-dark-lighter": "#1C1C1C",
-        "ev-light": "#F8F1E5",
-        "ev-light-darker": "#F8F1E5",
-        "ev-light-lighter": "#F8F1E5",
-        "ev-destructive": "#d63e3e",
-        "ev-destructive-darker": "#B91C1C",
-        "ev-destructive-lighter": "#B91C1C",
+        "ev-primary": {
+          DEFAULT: "#499AAC",
+          hard: colors.cyan[600],
+          harder: colors.cyan[700]
+        },
+        "ev-secondary": {
+          DEFAULT: "#DE7A4F",
+          hard: colors.orange[600],
+          harder: colors.orange[700],
+        },
+        "ev-dark": {
+          DEFAULT: "#1C1C1C",
+          hard: colors.neutral[700],
+          harder: colors.neutral[600],
+        },
+        "ev-light": {
+          DEFAULT: "#F8F1E5",
+          hard: colors.neutral[200],
+          harder: colors.neutral[300],
+        },
+        "ev-destructive": {
+          DEFAULT: "#d63e3e",
+          hard: colors.red[600],
+          harder: colors.red[700],
+        },
       },
     },
   },

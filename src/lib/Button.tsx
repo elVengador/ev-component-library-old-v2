@@ -5,12 +5,8 @@ import {
 import { twMerge } from "tailwind-merge";
 
 type ButtonVariant = "solid" | "flat";
-type ButtonColor =
-  | "primary"
-  | "secondary"
-  | "destructive"
-  | "foreground"
-  | "background";
+type ButtonColor = "primary" | "secondary" | "destructive" | "foreground";
+// | "background";
 
 export type ButtonProps = RACButtonProps & {
   variant?: ButtonVariant;
@@ -25,14 +21,12 @@ const styles: { [key in ButtonVariant]: { [key in ButtonColor]: string } } = {
     secondary: `${baseStyles} bg-transparent text-ev-secondary hover:bg-gray-200 pressed:bg-gray-300 hover:dark:bg-gray-800  pressed:dark:bg-gray-700`,
     destructive: `${baseStyles} bg-transparent text-ev-destructive hover:bg-gray-200 pressed:bg-gray-300 hover:dark:bg-gray-800  pressed:dark:bg-gray-700`,
     foreground: `${baseStyles} bg-transparent text-ev-dark hover:bg-gray-200 pressed:bg-gray-300 dark:text-ev-light hover:dark:bg-gray-800  pressed:dark:bg-gray-700`,
-    background: `${baseStyles} bg-transparent text-ev-light hover:bg-gray-800 pressed:bg-gray-700 dark:text-ev-dark hover:dark:bg-gray-200  pressed:dark:bg-gray-300`,
   },
   solid: {
-    primary: `${baseStyles} bg-ev-primary hover:bg-cyan-600 pressed:bg-cyan-700 text-white`,
-    secondary: `${baseStyles} bg-ev-secondary hover:bg-orange-600 pressed:bg-orange-700 text-white`,
-    destructive: `${baseStyles} bg-ev-destructive hover:bg-red-600 pressed:bg-red-700 text-white`,
-    foreground: `${baseStyles} bg-ev-dark text-ev-light hover:bg-gray-700 pressed:bg-gray-600 dark:bg-ev-light dark:text-ev-dark dark:hover:bg-gray-200  dark:pressed:bg-gray-300`,
-    background: `${baseStyles} bg-ev-light text-ev-dark hover:bg-gray-200 pressed:bg-gray-300 dark:bg-ev-dark dark:text-ev-light hover:dark:bg-gray-700  pressed:dark:bg-gray-600`,
+    primary: `${baseStyles} bg-ev-primary hover:bg-ev-primary-hard pressed:bg-ev-primary-harder text-ev-light`,
+    secondary: `${baseStyles} bg-ev-secondary hover:bg-ev-secondary-hard pressed:bg-ev-primary-harder text-ev-light`,
+    destructive: `${baseStyles} bg-ev-destructive hover:bg-ev-destructive-hard pressed:bg-ev-destructive-harder text-ev-light`,
+    foreground: `${baseStyles} bg-ev-dark text-ev-light hover:bg-ev-dark-hard pressed:bg-ev-dark-harder dark:bg-ev-light dark:text-ev-dark dark:hover:bg-ev-light-hard  dark:pressed:bg-ev-light-harder`,
   },
 };
 
