@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { Button } from "./lib/Button";
+import { IconButton } from "./lib/IconButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "./lib/Link";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -26,6 +30,13 @@ function App() {
           >
             count is {count}
           </Button>
+          <IconButton>
+            <FontAwesomeIcon icon={faHouse} />
+          </IconButton>
+          <Link href="/">redirect</Link>
+          <Link href="/" target="_blank">
+            new tab
+          </Link>
         </section>
       </div>
     </main>
