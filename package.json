@@ -14,10 +14,15 @@
     "build-storybook": "storybook build"
   },
   "peerDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "react": "^18.2.0",
     "react-aria-components": "^1.1.1",
     "react-dom": "^18.2.0",
-    "tailwind-merge": "^2.2.1"
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-react-aria-components": "^1.1.1"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.17",
@@ -41,19 +46,12 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "eslint-plugin-storybook": "^0.8.0",
     "postcss": "^8.4.35",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "storybook": "^7.6.17",
-    "tailwindcss": "^3.4.1",
     "typescript": "^5.2.2",
     "vite": "^5.1.4",
     "vite-plugin-dts": "^3.7.3"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.5.1",
-    "@fortawesome/free-solid-svg-icons": "^6.5.1",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "postcss-dark-theme-class": "^1.2.1",
-    "tailwindcss-react-aria-components": "^1.1.1"
+    "postcss-dark-theme-class": "^1.2.1"
   }
 }

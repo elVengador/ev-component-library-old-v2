@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Link } from "../lib/Link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleHalfStroke } from "@fortawesome/free-solid-svg-icons";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
