@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Item, ListProps, ListState, Node, useListState } from "react-stately";
+import { ListProps, ListState, Node, useListState } from "react-stately";
 import {
   mergeProps,
   useFocusRing,
