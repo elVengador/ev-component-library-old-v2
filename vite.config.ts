@@ -13,7 +13,7 @@ export default defineConfig({
       formats: ['es']
     },
     rollupOptions: {
-      external: ['react', "react-dom", 'react/jsx-runtime', "react-aria-components", "tailwind-merge", "tailwindcss"],
+      external: ['react', "react-dom", 'react/jsx-runtime', "tailwind-merge", "tailwindcss"],
     }
   },
   resolve: { alias: { src: resolve('src/') } },

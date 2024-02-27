@@ -40,7 +40,7 @@ export default {
     },
   },
   darkMode: 'class',
-  plugins: [require('tailwindcss-react-aria-components')],
+  plugins: [],
   purge: {
     enabled: process.env.NODE_ENV === 'publish',
     content: ['./src/**/*.{js,jsx,ts,tsx}']
