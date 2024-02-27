@@ -1,17 +1,16 @@
-import {
-  Button as RACButton,
-  type ButtonProps as RACButtonProps,
-} from "react-aria-components";
 import { twMerge } from "tailwind-merge";
+import { AriaButtonOptions, useButton } from "react-aria";
+import { ComponentPropsWithoutRef, RefObject, forwardRef } from "react";
+import { filterDOMProps } from "@react-aria/utils";
 
 type ButtonVariant = "solid" | "flat";
 type ButtonColor = "primary" | "secondary" | "destructive" | "foreground";
-// | "background";
 
-export type ButtonProps = RACButtonProps & {
-  variant?: ButtonVariant;
-  color?: ButtonColor;
-};
+export type ButtonProps = AriaButtonOptions<"button"> &
+  ComponentPropsWithoutRef<"button"> & {
+    variant?: ButtonVariant;
+    color?: ButtonColor;
+  };
 
 const baseStyles = "px-2 py-1 rounded-md";
 
@@ -33,12 +32,19 @@ const styles: { [key in ButtonVariant]: { [key in ButtonColor]: string } } = {
 const styleIt = ({ variant = "solid", color = "primary" }: ButtonProps) =>
   styles[variant][color];
 
-export const Button = (props: ButtonProps) => {
-  console.log({ props });
-  return (
-    <RACButton
-      {...props}
-      className={twMerge(styleIt(props), props.className as string)}
-    />
-  );
-};
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ children, ...props }, ref) => {
+    const { buttonProps } = useButton(props, ref as RefObject<Element>);
+
+    return (
+      <button
+        ref={ref}
+        {...filterDOMProps(props)}
+        {...buttonProps}
+        className={twMerge(styleIt(props), props.className as string)}
+      >
+        {children}
+      </button>
+    );
+  }
+);
