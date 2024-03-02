@@ -9,6 +9,7 @@ export default {
     // ".storybook/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: { "awesome": ["Font Awesome 5 Free"] },
     extend: {
       colors: {
         "ev-primary": {

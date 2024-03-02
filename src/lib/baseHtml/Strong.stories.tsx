@@ -1,19 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { H5 } from "../lib/Text";
+import { Strong } from "./BaseHtml";
 
 const meta = {
-  title: "Atoms/H5",
-  component: H5,
+  title: "BaseHtml/Strong",
+  component: Strong,
   parameters: {},
   tags: ["autodocs"],
-} satisfies Meta<typeof H5>;
+} satisfies Meta<typeof Strong>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const H5Title: Story = {
+export const BoldText: Story = {
   args: {
-    children: "H5 title",
+    children: `Important text`,
   },
 };

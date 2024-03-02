@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { H6 } from "../lib/Text";
+import { H6 } from "./BaseHtml";
 
 const meta = {
-  title: "Atoms/H6",
+  title: "BaseHtml/H6",
   component: H6,
   parameters: {},
   tags: ["autodocs"],

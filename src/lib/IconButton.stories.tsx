@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { IconButton } from "../lib/IconButton";
+import { IconButton } from "./IconButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleHalfStroke } from "@fortawesome/free-solid-svg-icons";
 
@@ -37,6 +37,6 @@ export const Flat: Story = {
   args: {
     color: "primary",
     variant: "flat",
-    children: "Click here",
+    children: <FontAwesomeIcon icon={faCircleHalfStroke} />,
   },
 };

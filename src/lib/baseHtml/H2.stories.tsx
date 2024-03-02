@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { H2 } from "../lib/Text";
+import { H2 } from "./BaseHtml";
 
 const meta = {
-  title: "Atoms/H2",
+  title: "BaseHtml/H2",
   component: H2,
   parameters: {},
   tags: ["autodocs"],

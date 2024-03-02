@@ -1,30 +1,63 @@
-# React + TypeScript + Vite
+## How to set up tailwind on your project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+First you should use the next libraries:
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```json
+"@fortawesome/fontawesome-svg-core": "^6.5.1",
+"@fortawesome/free-solid-svg-icons": "^6.5.1",
+"@fortawesome/react-fontawesome": "^0.2.0",
+"react": "^18.2.0",
+"react-dom": "^18.2.0",
+"react-stately": "^3.30.1",
+"tailwind-merge": "^2.2.1",
+"tailwindcss": "^3.4.1"
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### set up your tailwind
+
+add in content the **ev-component-library/dist** and set up the colors: ev-primary, ev-secondary, ev-dark, ev-light and ev-destructive
+
+```
+const colors = require('tailwindcss/colors')
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
+    "./node_modules/ev-component-library/dist/**/*.{js,ts,jsx,tsx}"], //<-- to apply styles on ev-component-library
+  theme: {
+    extend: {
+      colors: { //<-- define the colors to use on ev-component-library
+        "ev-primary": {
+          DEFAULT: "#499AAC",
+          hard: colors.cyan[600],
+          harder: colors.cyan[700]
+        },
+        "ev-secondary": {
+          DEFAULT: "#DE7A4F",
+          hard: colors.orange[600],
+          harder: colors.orange[700],
+        },
+        "ev-dark": {
+          DEFAULT: "#1C1C1C",
+          hard: colors.neutral[700],
+          harder: colors.neutral[600],
+        },
+        "ev-light": {
+          DEFAULT: "#F8F1E5",
+          hard: colors.neutral[200],
+          harder: colors.neutral[300],
+        },
+        "ev-destructive": {
+          DEFAULT: "#d63e3e",
+          hard: colors.red[600],
+          harder: colors.red[700],
+        },
+      },
+    },
+  },
+  darkMode: "class",
+  plugins: [],
+};
+
+```

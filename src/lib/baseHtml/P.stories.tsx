@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { P } from "../lib/Text";
+import { P } from "./BaseHtml";
 
 const meta = {
-  title: "Atoms/Paragraph",
+  title: "BaseHtml/P",
   component: P,
   parameters: {},
   tags: ["autodocs"],

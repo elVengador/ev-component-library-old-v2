@@ -38,7 +38,3 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
     );
   }
 );
-
-export const OpenLink = (props: LinkProps) => (
-  <Link {...props} target="_blank" rel="noopener" />
-);

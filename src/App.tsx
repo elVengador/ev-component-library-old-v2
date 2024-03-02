@@ -7,7 +7,17 @@ import { Link } from "./lib/Link";
 import { Checkbox } from "./lib/CheckBox";
 import { GridList } from "./lib/GridList";
 import { Item } from "react-stately";
-import { Bold, Code, H1, H2, H3, H4, H5, H6, P } from "./lib/Text";
+import {
+  Strong,
+  Code,
+  H1,
+  H2,
+  H3,
+  H4,
+  H5,
+  H6,
+  P,
+} from "./lib/baseHtml/BaseHtml";
 // import { GridList, GridListItem } from "./lib/GridList.old";
 
 function App() {
@@ -77,7 +87,7 @@ function App() {
             corrupti! Neque nulla molestias expedita soluta distinctio quas est
             necessitatibus reiciendis quisquam.
           </P>
-          <Bold>Important text here</Bold>
+          <Strong>Important text here</Strong>
           <Code>console.log('Hello')</Code>
         </section>
       </div>

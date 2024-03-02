@@ -1,19 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { H1 } from "../lib/Text";
+import { Code } from "./BaseHtml";
 
 const meta = {
-  title: "Atoms/H1",
-  component: H1,
+  title: "BaseHtml/Code",
+  component: Code,
   parameters: {},
   tags: ["autodocs"],
-} satisfies Meta<typeof H1>;
+} satisfies Meta<typeof Code>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const H1Title: Story = {
+export const CodeText: Story = {
   args: {
-    children: "H1 title",
+    children: `console.log('hello')`,
   },
 };
