@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* details {
+  background-color: gray;
+}
+
+details summary {
+  padding: 8px;
+}
+details div {
+  padding: 8px;
+}
+
+details[open] summary {
+  background-color: rgb(8, 145, 178) !important;
+}
+details[open] summary:hover {
+  background-color: rgb(8, 111, 137) !important;
+} */
