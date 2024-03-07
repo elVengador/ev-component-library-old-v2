@@ -16,10 +16,10 @@ const baseStyles = "px-2 py-1 rounded-md";
 
 const styles: { [key in ButtonVariant]: { [key in ButtonColor]: string } } = {
   flat: {
-    primary: `${baseStyles} bg-transparent text-ev-primary data-[hovered]:bg-gray-200 data-[pressed]:bg-gray-300 data-[hovered]:dark:bg-gray-800  data-[pressed]:dark:bg-gray-700`,
-    secondary: `${baseStyles} bg-transparent text-ev-secondary data-[hovered]:bg-gray-200 data-[pressed]:bg-gray-300 data-[hovered]:dark:bg-gray-800  data-[pressed]:dark:bg-gray-700`,
-    destructive: `${baseStyles} bg-transparent text-ev-destructive data-[hovered]:bg-gray-200 data-[pressed]:bg-gray-300 data-[hovered]:dark:bg-gray-800  data-[pressed]:dark:bg-gray-700`,
-    foreground: `${baseStyles} bg-transparent text-ev-dark data-[hovered]:bg-gray-200 data-[pressed]:bg-gray-300 dark:text-ev-light data-[hovered]:dark:bg-gray-800  data-[pressed]:dark:bg-gray-700`,
+    primary: `${baseStyles} bg-transparent text-ev-primary data-[hovered]:bg-ev-primary/20 data-[pressed]:bg-ev-primary/40 data-[hovered]:dark:bg-ev-primary/20 data-[pressed]:dark:bg-ev-primary/40`,
+    secondary: `${baseStyles} bg-transparent text-ev-secondary data-[hovered]:bg-ev-secondary/20 data-[pressed]:bg-ev-secondary/40 data-[hovered]:dark:bg-ev-secondary/20  data-[pressed]:dark:bg-ev-secondary/40`,
+    destructive: `${baseStyles} bg-transparent text-ev-destructive data-[hovered]:bg-ev-destructive/20 data-[pressed]:bg-ev-destructive/40 data-[hovered]:dark:bg-ev-destructive/20  data-[pressed]:dark:bg-ev-destructive/40`,
+    foreground: `${baseStyles} bg-transparent text-ev-dark data-[hovered]:bg-ev-dark/20 data-[pressed]:bg-ev-dark/40 dark:text-ev-light data-[hovered]:dark:bg-ev-light/20  data-[pressed]:dark:bg-ev-light/40`,
   },
   solid: {
     primary: `${baseStyles} bg-ev-primary data-[hovered]:bg-ev-primary-hard data-[pressed]:bg-ev-primary-harder text-ev-light`,

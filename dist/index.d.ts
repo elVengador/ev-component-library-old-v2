@@ -1,5 +1,6 @@
 import { AriaButtonOptions } from 'react-aria';
 import { AriaLinkOptions } from 'react-aria';
+import type { AriaTextFieldProps } from 'react-aria';
 import { ButtonHTMLAttributes } from 'react';
 import { ComponentPropsWithoutRef } from 'react';
 import { DetailedHTMLProps } from 'react';
@@ -102,6 +103,26 @@ export declare type PrevProps = ComponentPropsWithoutRef<"pre">;
 export declare const Strong: ({ children, className, ...props }: StrongProps) => JSX_2.Element;
 
 export declare type StrongProps = ComponentPropsWithoutRef<"strong">;
+
+export declare const TextArea: ({ variant, className, labelClassName, inputClassName, ...props }: TextAreaProps) => JSX_2.Element;
+
+declare type TextAreaProps = AriaTextFieldProps & {
+    variant?: "flat" | "solid";
+    className?: string;
+    labelClassName?: string;
+    inputClassName?: string;
+};
+
+export declare const TextField: ({ variant, className, labelClassName, inputClassName, descriptionClassName, errorClassName, ...props }: TextFieldProps) => JSX_2.Element;
+
+declare type TextFieldProps = AriaTextFieldProps & {
+    variant: "flat" | "solid";
+    className?: string;
+    labelClassName?: string;
+    inputClassName?: string;
+    descriptionClassName?: string;
+    errorClassName?: string;
+};
 
 export declare const Ul: ({ children, className, ...props }: UlProps) => JSX_2.Element;
 

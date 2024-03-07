@@ -1,6 +1,6 @@
 import { filterDOMProps } from "@react-aria/utils";
 import { ComponentPropsWithoutRef, RefObject, forwardRef } from "react";
-import { AriaButtonOptions, useButton } from "react-aria";
+import { AriaButtonOptions, useButton, useHover } from "react-aria";
 import { twMerge } from "tailwind-merge";
 
 type ButtonVariant = "solid" | "flat";
@@ -17,10 +17,10 @@ const baseStyles = "w-[32px] h-[32px] rounded-md";
 
 const styles: { [key in ButtonVariant]: { [key in ButtonColor]: string } } = {
   flat: {
-    primary: `${baseStyles} bg-transparent text-ev-primary hover:bg-gray-200 pressed:bg-gray-300 hover:dark:bg-gray-800  pressed:dark:bg-gray-700`,
-    secondary: `${baseStyles} bg-transparent text-ev-secondary hover:bg-gray-200 pressed:bg-gray-300 hover:dark:bg-gray-800  pressed:dark:bg-gray-700`,
-    destructive: `${baseStyles} bg-transparent text-ev-destructive hover:bg-gray-200 pressed:bg-gray-300 hover:dark:bg-gray-800  pressed:dark:bg-gray-700`,
-    foreground: `${baseStyles} bg-transparent text-ev-dark hover:bg-gray-200 pressed:bg-gray-300 dark:text-ev-light hover:dark:bg-gray-800  pressed:dark:bg-gray-700`,
+    primary: `${baseStyles} bg-transparent text-ev-primary data-[hovered]:bg-ev-primary/20 data-[pressed]:bg-ev-primary/40 data-[hovered]:dark:bg-ev-primary/20 data-[pressed]:dark:bg-ev-primary/40`,
+    secondary: `${baseStyles} bg-transparent text-ev-secondary data-[hovered]:bg-ev-secondary/20 data-[pressed]:bg-ev-secondary/40 data-[hovered]:dark:bg-ev-secondary/20  data-[pressed]:dark:bg-ev-secondary/40`,
+    destructive: `${baseStyles} bg-transparent text-ev-destructive data-[hovered]:bg-ev-destructive/20 data-[pressed]:bg-ev-destructive/40 data-[hovered]:dark:bg-ev-destructive/20  data-[pressed]:dark:bg-ev-destructive/40`,
+    foreground: `${baseStyles} bg-transparent text-ev-dark data-[hovered]:bg-ev-dark/20 data-[pressed]:bg-ev-dark/40 dark:text-ev-light data-[hovered]:dark:bg-ev-light/20  data-[pressed]:dark:bg-ev-light/40`,
   },
   solid: {
     primary: `${baseStyles} bg-ev-primary hover:bg-ev-primary-hard pressed:bg-ev-primary-harder text-ev-light`,
@@ -35,13 +35,20 @@ const styleIt = ({ variant = "flat", color = "foreground" }: IconButtonProps) =>
 
 export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
   ({ children, ...props }, ref) => {
-    const { buttonProps } = useButton(props, ref as RefObject<Element>);
+    const { buttonProps, isPressed } = useButton(
+      props,
+      ref as RefObject<Element>
+    );
+    const { hoverProps, isHovered } = useHover({});
 
     return (
       <button
         ref={ref}
         {...filterDOMProps(props)}
+        {...hoverProps}
         {...buttonProps}
+        {...(isPressed && { "data-pressed": isPressed })}
+        {...(isHovered && !isPressed && { "data-hovered": isHovered })}
         className={twMerge(styleIt(props), props.className as string)}
       >
         {children}

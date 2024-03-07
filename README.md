@@ -17,21 +17,23 @@ First you should use the next libraries:
 
 add in content the **ev-component-library/dist** and set up the colors: ev-primary, ev-secondary, ev-dark, ev-light and ev-destructive
 
-```
-const colors = require('tailwindcss/colors')
+```js
+const colors = require("tailwindcss/colors");
 
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
-    "./node_modules/ev-component-library/dist/**/*.{js,ts,jsx,tsx}"], //<-- to apply styles on ev-component-library
+    "./node_modules/ev-component-library/dist/**/*.{js,ts,jsx,tsx}",
+  ], //<-- to apply styles on ev-component-library
   theme: {
     extend: {
-      colors: { //<-- define the colors to use on ev-component-library
+      colors: {
+        //<-- define the colors to use on ev-component-library
         "ev-primary": {
           DEFAULT: "#499AAC",
           hard: colors.cyan[600],
-          harder: colors.cyan[700]
+          harder: colors.cyan[700],
         },
         "ev-secondary": {
           DEFAULT: "#DE7A4F",
@@ -59,5 +61,4 @@ export default {
   darkMode: "class",
   plugins: [],
 };
-
 ```
