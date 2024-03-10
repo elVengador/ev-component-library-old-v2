@@ -15,6 +15,7 @@ type Story = StoryObj<typeof meta>;
 export const DefaultBlockquote: Story = {
   args: {
     variant: "default",
+    source: "Anonym",
     children: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora
     est voluptates cupiditate modi velit doloremque pariatur omnis id
     corrupti! Neque nulla molestias expedita soluta distinctio quas est

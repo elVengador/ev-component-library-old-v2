@@ -177,11 +177,13 @@ export const Img = ({ className, ...props }: Img) => {
 
 export type BlockquoteProps = ComponentPropsWithoutRef<"blockquote"> & {
   variant?: "base" | "default";
+  source?: string;
 };
 export const Blockquote = ({
   children,
   className,
   variant = "default",
+  source,
   ...props
 }: BlockquoteProps) => {
   return (
@@ -207,6 +209,7 @@ export const Blockquote = ({
           />
         )}
       </div>
+      <div className="text-right">{source}</div>
     </blockquote>
   );
 };
