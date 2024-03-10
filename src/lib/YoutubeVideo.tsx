@@ -21,5 +21,3 @@ export const YoutubeVideo = ({
     </div>
   );
 };
-
-<YoutubeVideo videoId="ss" />;
