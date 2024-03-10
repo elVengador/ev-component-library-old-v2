@@ -10,7 +10,10 @@ import { twMerge } from "tailwind-merge";
 export type H1Props = ComponentPropsWithoutRef<"h1">;
 export const H1 = ({ children, className, ...props }: H1Props) => {
   return (
-    <h1 {...props} className={twMerge("text-ev-primary text-6xl", className)}>
+    <h1
+      {...props}
+      className={twMerge("text-ev-primary text-6xl font-semibold", className)}
+    >
       <span>{children}</span>
       {props.id && <Hashtag id={props.id} />}
     </h1>
@@ -20,7 +23,10 @@ export const H1 = ({ children, className, ...props }: H1Props) => {
 export type H2Props = ComponentPropsWithoutRef<"h2">;
 export const H2 = ({ children, className, ...props }: H2Props) => {
   return (
-    <h2 {...props} className={twMerge("text-ev-primary text-5xl", className)}>
+    <h2
+      {...props}
+      className={twMerge("text-ev-primary text-5xl font-semibold", className)}
+    >
       <span>{children}</span>
       {props.id && <Hashtag id={props.id} />}
     </h2>
@@ -30,7 +36,10 @@ export const H2 = ({ children, className, ...props }: H2Props) => {
 export type H3Props = ComponentPropsWithoutRef<"h3">;
 export const H3 = ({ children, className, ...props }: H3Props) => {
   return (
-    <h3 {...props} className={twMerge("text-ev-primary text-4xl", className)}>
+    <h3
+      {...props}
+      className={twMerge("text-ev-primary text-4xl font-semibold", className)}
+    >
       <span>{children}</span>
       {props.id && <Hashtag id={props.id} />}
     </h3>
@@ -40,7 +49,10 @@ export const H3 = ({ children, className, ...props }: H3Props) => {
 export type H4Props = ComponentPropsWithoutRef<"h4">;
 export const H4 = ({ children, className, ...props }: H4Props) => {
   return (
-    <h4 {...props} className={twMerge("text-ev-primary text-3xl", className)}>
+    <h4
+      {...props}
+      className={twMerge("text-ev-primary text-3xl font-semibold", className)}
+    >
       <span>{children}</span>
       {props.id && <Hashtag id={props.id} />}
     </h4>
@@ -50,7 +62,10 @@ export const H4 = ({ children, className, ...props }: H4Props) => {
 export type H5Props = ComponentPropsWithoutRef<"h5">;
 export const H5 = ({ children, className, ...props }: H5Props) => {
   return (
-    <h1 {...props} className={twMerge("text-ev-primary text-2xl", className)}>
+    <h1
+      {...props}
+      className={twMerge("text-ev-primary text-2xl font-semibold", className)}
+    >
       <span>{children}</span>
       {props.id && <Hashtag id={props.id} />}
     </h1>
@@ -60,7 +75,10 @@ export const H5 = ({ children, className, ...props }: H5Props) => {
 export type H6Props = ComponentPropsWithoutRef<"h6">;
 export const H6 = ({ children, className, ...props }: H6Props) => {
   return (
-    <h6 {...props} className={twMerge("text-ev-primary text-xl", className)}>
+    <h6
+      {...props}
+      className={twMerge("text-ev-primary text-xl font-semibold", className)}
+    >
       <span>{children}</span>
       {props.id && <Hashtag id={props.id} />}
     </h6>
@@ -104,7 +122,7 @@ export const Code = ({ children, className, ...props }: CodeProps) => {
     <code
       {...props}
       className={twMerge(
-        "px-1 text-ev-dark bg-ev-light-harder dark:text-ev-light  dark:bg-ev-dark-harder text-base rounded-md",
+        "px-1 text-ev-dark bg-ev-light-hard dark:text-ev-light  dark:bg-ev-dark-hard text-base rounded-md",
         className
       )}
     >
@@ -174,7 +192,7 @@ export const Blockquote = ({
         className
       )}
     >
-      <p className="inline">
+      <div className="inline">
         {variant === "default" && (
           <FontAwesomeIcon
             icon={faQuoteLeft}
@@ -188,14 +206,22 @@ export const Blockquote = ({
             className="ml-2 text-ev-primary"
           />
         )}
-      </p>
+      </div>
     </blockquote>
   );
 };
 
 export type AProps = ComponentPropsWithoutRef<"a">;
 export const A = ({ className, children, ...props }: AProps) => (
-  <a {...props} className={twMerge("", className)}>
+  <a
+    {...props}
+    className={twMerge(
+      "border-b-2 border-dashed border-ev-dark hover:border-solid hover:text-ev-primary hover:border-ev-primary",
+      className
+    )}
+    target="_blank"
+    rel="noreferrer noopener"
+  >
     <FontAwesomeIcon icon={faLink} className="mr-2" />
     {children}
   </a>

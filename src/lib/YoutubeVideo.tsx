@@ -4,10 +4,10 @@ type YoutubeVideoProps = {
 };
 export const YoutubeVideo = ({
   videoId,
-  startMilliseconds = 440,
+  startMilliseconds = 0,
 }: YoutubeVideoProps) => {
   return (
-    <div className="relative w-full">
+    <div className="relative w-full h-auto pb-[56.25%]">
       <iframe
         // start=700
         src={`https://www.youtube-nocookie.com/embed/${videoId}?start=${startMilliseconds}`}
@@ -21,3 +21,5 @@ export const YoutubeVideo = ({
     </div>
   );
 };
+
+<YoutubeVideo videoId="ss" />;

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import type { AriaTextFieldProps } from "react-aria";
 import { useTextField } from "react-aria";
 import { twMerge } from "tailwind-merge";
@@ -8,6 +8,7 @@ type TextAreaProps = AriaTextFieldProps & {
   className?: string;
   labelClassName?: string;
   inputClassName?: string;
+  autoResize?: boolean;
 };
 
 export const TextArea = ({
@@ -15,6 +16,7 @@ export const TextArea = ({
   className,
   labelClassName,
   inputClassName,
+  autoResize,
   ...props
 }: TextAreaProps) => {
   let { label } = props;
@@ -26,6 +28,26 @@ export const TextArea = ({
     },
     ref
   );
+
+  const autoResizeTextarea = (element: any) => {
+    element.style.height = "auto";
+    element.style.height = `${element.scrollHeight}px`;
+  };
+
+  const onInputCustom = (e: React.FormEvent<HTMLTextAreaElement>) => {
+    if (inputProps.onInput) {
+      inputProps.onInput(e);
+    }
+    if (autoResize) {
+      autoResizeTextarea(e.target);
+    }
+  };
+
+  useEffect(() => {
+    if (autoResize && ref.current) {
+      autoResizeTextarea(ref.current);
+    }
+  }, [autoResize]);
 
   return (
     <div className={twMerge("flex flex-col w-full", className)}>
@@ -39,6 +61,7 @@ export const TextArea = ({
       )}
       <textarea
         {...inputProps}
+        onInput={onInputCustom}
         ref={ref}
         className={twMerge(
           inputProps.className,

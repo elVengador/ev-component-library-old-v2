@@ -6,6 +6,7 @@ import { ComponentPropsWithoutRef } from 'react';
 import { DetailedHTMLProps } from 'react';
 import { ForwardRefExoticComponent } from 'react';
 import { JSX as JSX_2 } from 'react/jsx-runtime';
+import { ReactNode } from 'react';
 import { RefAttributes } from 'react';
 
 export declare const A: ({ className, children, ...props }: AProps) => JSX_2.Element;
@@ -39,6 +40,13 @@ declare type ButtonVariant_2 = "solid" | "flat";
 export declare const Code: ({ children, className, ...props }: CodeProps) => JSX_2.Element;
 
 export declare type CodeProps = ComponentPropsWithoutRef<"code">;
+
+export declare const Collapsible: ({ title, children }: CollapsibleProps) => JSX_2.Element;
+
+declare type CollapsibleProps = {
+    title: ReactNode;
+    children: ReactNode;
+};
 
 export declare const H1: ({ children, className, ...props }: H1Props) => JSX_2.Element;
 
@@ -78,14 +86,13 @@ export declare type Img = ComponentPropsWithoutRef<"img">;
 
 export declare const Img: ({ className, ...props }: Img) => JSX_2.Element;
 
-export declare const Link: ForwardRefExoticComponent<AriaLinkOptions & Omit<DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, "ref"> & {
-    color?: LinkColor | undefined;
-} & RefAttributes<HTMLAnchorElement>>;
+export declare const Link: ({ children, showExternalIcon, ...props }: LinkProps) => JSX_2.Element;
 
 declare type LinkColor = "primary" | "secondary";
 
-export declare type LinkProps = AriaLinkOptions & ComponentPropsWithoutRef<"button"> & {
+export declare type LinkProps = AriaLinkOptions & ComponentPropsWithoutRef<"a"> & {
     color?: LinkColor;
+    showExternalIcon?: boolean;
 };
 
 export declare const Ol: ({ children, className, ...props }: OlProps) => JSX_2.Element;
@@ -104,13 +111,14 @@ export declare const Strong: ({ children, className, ...props }: StrongProps) =>
 
 export declare type StrongProps = ComponentPropsWithoutRef<"strong">;
 
-export declare const TextArea: ({ variant, className, labelClassName, inputClassName, ...props }: TextAreaProps) => JSX_2.Element;
+export declare const TextArea: ({ variant, className, labelClassName, inputClassName, autoResize, ...props }: TextAreaProps) => JSX_2.Element;
 
 declare type TextAreaProps = AriaTextFieldProps & {
     variant?: "flat" | "solid";
     className?: string;
     labelClassName?: string;
     inputClassName?: string;
+    autoResize?: boolean;
 };
 
 export declare const TextField: ({ variant, className, labelClassName, inputClassName, descriptionClassName, errorClassName, ...props }: TextFieldProps) => JSX_2.Element;
@@ -127,5 +135,12 @@ declare type TextFieldProps = AriaTextFieldProps & {
 export declare const Ul: ({ children, className, ...props }: UlProps) => JSX_2.Element;
 
 export declare type UlProps = ComponentPropsWithoutRef<"ul">;
+
+export declare const YoutubeVideo: ({ videoId, startMilliseconds, }: YoutubeVideoProps) => JSX_2.Element;
+
+declare type YoutubeVideoProps = {
+    videoId: string;
+    startMilliseconds?: number;
+};
 
 export { }

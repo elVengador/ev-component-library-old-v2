@@ -17,25 +17,22 @@ const meta = {
   //   variant: { control: 'color' },
   //   color:{control:}
   // },
+  // decorators: [
+  //   (Story) => {
+  //     const [value, setValue] = useState(
+  //       "loremx loremxloremxloremxloremx loremxloremxloremx loremxloremx loremxloremxloremx loremx loremxloremxloremxloremx loremxloremxloremx loremxloremx loremxloremxloremx loremx loremxloremxloremxloremx loremxloremxloremx loremxloremx loremxloremxloremx loremx loremxloremxloremxloremx loremxloremxloremx loremxloremx loremxloremxloremx loremx loremxloremxloremxloremx loremxloremxloremx loremxloremx loremxloremxloremx loremx loremxloremxloremxloremx loremxloremxloremx loremxloremx loremxloremxloremx loremx loremxloremxloremxloremx loremxloremxloremx loremxloremx loremxloremxloremx loremx loremxloremxloremxloremx loremxloremxloremx loremxloremx loremxloremxloremx loremx loremxloremxloremxloremx loremxloremxloremx loremxloremx loremxloremxloremx loremx loremxloremxloremxloremx loremxloremxloremx loremxloremx loremxloremxloremx  loremx loremxloremxloremxloremx loremxloremxloremx loremxloremx loremxloremxloremx loremx loremxloremxloremxloremx loremxloremxloremx loremxloremx loremxloremxloremx loremx loremxloremxloremxloremx loremxloremxloremx loremxloremx loremxloremxloremx loremx loremxloremxloremxloremx loremxloremxloremx loremxloremx loremxloremxloremx loremx loremxloremxloremxloremx loremxloremxloremx loremxloremx loremxloremxloremx loremx loremxloremxloremxloremx loremxloremxloremx loremxloremx loremxloremxloremx loremx loremxloremxloremxloremx loremxloremxloremx loremxloremx loremxloremxloremx"
+  //     );
+  //     return <Story args={{ value, onChange: setValue, autoResize: true }} />;
+  //   },
+  // ],
 } satisfies Meta<typeof TextArea>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const DefaultTextArea: Story = {
+export const Default: Story = {
   args: {
-    label: "Text area",
-    variant: "solid",
-    value:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut placerat ac purus ut pellentesque. Sed faucibus suscipit est sed condimentum. Duis elementum libero ut turpis vulputate consectetur. Phasellus magna arcu, euismod in lacinia at, malesuada sit amet nunc. Quisque consectetur mi ante, vitae faucibus risus congue in. In venenatis eros nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae",
+    label: "Default Text Area",
   },
 };
-
-// export const OpenInNewTabLink: Story = {
-//   args: {
-//     color: "primary",
-//     target: "_blank",
-//     children: "Open in new tab",
-//   },
-// };
