@@ -13,10 +13,11 @@ export declare const A: ({ className, children, ...props }: AProps) => JSX_2.Ele
 
 export declare type AProps = ComponentPropsWithoutRef<"a">;
 
-export declare const Blockquote: ({ children, className, variant, ...props }: BlockquoteProps) => JSX_2.Element;
+export declare const Blockquote: ({ children, className, variant, source, ...props }: BlockquoteProps) => JSX_2.Element;
 
 export declare type BlockquoteProps = ComponentPropsWithoutRef<"blockquote"> & {
     variant?: "base" | "default";
+    source?: string;
 };
 
 export declare const Button: ForwardRefExoticComponent<AriaButtonOptions<"button"> & Omit<DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, "ref"> & {
@@ -41,11 +42,12 @@ export declare const Code: ({ children, className, ...props }: CodeProps) => JSX
 
 export declare type CodeProps = ComponentPropsWithoutRef<"code">;
 
-export declare const Collapsible: ({ title, children }: CollapsibleProps) => JSX_2.Element;
+export declare const Collapsible: ({ title, children, unmountInvisibleChildren, }: CollapsibleProps) => JSX_2.Element;
 
 declare type CollapsibleProps = {
     title: ReactNode;
     children: ReactNode;
+    unmountInvisibleChildren?: boolean;
 };
 
 export declare const H1: ({ children, className, ...props }: H1Props) => JSX_2.Element;
