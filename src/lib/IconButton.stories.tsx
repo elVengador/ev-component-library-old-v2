@@ -30,6 +30,7 @@ export const Solid: Story = {
     color: "primary",
     variant: "solid",
     children: <FontAwesomeIcon icon={faCircleHalfStroke} />,
+    onPress: () => console.log("clicked!!"),
   },
 };
 
@@ -38,5 +39,16 @@ export const Flat: Story = {
     color: "primary",
     variant: "flat",
     children: <FontAwesomeIcon icon={faCircleHalfStroke} />,
+    onPress: () => console.log("clicked!!"),
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    color: "primary",
+    variant: "flat",
+    children: <FontAwesomeIcon icon={faCircleHalfStroke} />,
+    isDisabled: true,
+    onPress: () => console.log("clicked!!"),
   },
 };

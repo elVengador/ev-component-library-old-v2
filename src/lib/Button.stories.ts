@@ -27,7 +27,8 @@ export const Solid: Story = {
   args: {
     color: "primary",
     variant: "solid",
-    children: "Click here"
+    children: "Click here",
+    onPress: () => console.log("clicked!!"),
   },
 };
 
@@ -35,6 +36,17 @@ export const Flat: Story = {
   args: {
     color: "primary",
     variant: "flat",
-    children: "Click here"
+    children: "Click here",
+    onPress: () => console.log("clicked!!"),
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    color: "primary",
+    variant: "flat",
+    children: "Click here",
+    onPress: () => console.log("clicked!!"),
+    isDisabled: true
   },
 };
