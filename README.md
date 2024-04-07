@@ -6,6 +6,7 @@ First you should use the next libraries:
 "@fortawesome/fontawesome-svg-core": "^6.5.1",
 "@fortawesome/free-solid-svg-icons": "^6.5.1",
 "@fortawesome/react-fontawesome": "^0.2.0",
+"ev-component-library": "git@github.com:elVengador/ev-component-library.git#41a74316173e0ccf5e5c74208a80650931f5c41c",
 "react": "^18.2.0",
 "react-dom": "^18.2.0",
 "react-stately": "^3.30.1",

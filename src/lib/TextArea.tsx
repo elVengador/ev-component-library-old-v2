@@ -19,9 +19,9 @@ export const TextArea = ({
   autoResize,
   ...props
 }: TextAreaProps) => {
-  let { label } = props;
-  let ref = useRef(null);
-  let { labelProps, inputProps } = useTextField(
+  const { label } = props;
+  const ref = useRef(null);
+  const { labelProps, inputProps } = useTextField(
     {
       ...props,
       inputElementType: "textarea",
