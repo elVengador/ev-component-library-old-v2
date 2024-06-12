@@ -4,7 +4,12 @@ import { ComponentPropsWithoutRef, RefObject, forwardRef } from "react";
 import { filterDOMProps } from "@react-aria/utils";
 
 type ButtonVariant = "solid" | "flat";
-type ButtonColor = "primary" | "secondary" | "destructive" | "foreground";
+type ButtonColor =
+  | "primary"
+  | "secondary"
+  | "destructive"
+  | "foreground"
+  | "background";
 
 export type ButtonProps = AriaButtonOptions<"button"> &
   ComponentPropsWithoutRef<"button"> & {
@@ -20,12 +25,14 @@ const styles: { [key in ButtonVariant]: { [key in ButtonColor]: string } } = {
     secondary: `${baseStyles} bg-transparent text-ev-secondary data-[hovered]:bg-ev-secondary/20 data-[pressed]:bg-ev-secondary/40 data-[hovered]:dark:bg-ev-secondary/20  data-[pressed]:dark:bg-ev-secondary/40 disabled:text-ev-secondary/40`,
     destructive: `${baseStyles} bg-transparent text-ev-destructive data-[hovered]:bg-ev-destructive/20 data-[pressed]:bg-ev-destructive/40 data-[hovered]:dark:bg-ev-destructive/20  data-[pressed]:dark:bg-ev-destructive/40 disabled:text-ev-destructive/40`,
     foreground: `${baseStyles} bg-transparent text-ev-dark data-[hovered]:bg-ev-dark/20 data-[pressed]:bg-ev-dark/40 dark:text-ev-light data-[hovered]:dark:bg-ev-light/20  data-[pressed]:dark:bg-ev-light/40 disabled:text-ev-dark/40`,
+    background: `${baseStyles} bg-transparent text-ev-dark hover:text-ev-dark-hard pressed:text-ev-dark-harder dark:text-ev-light dark:hover:bg-ev-light-hard/20 pressed:dark:text-ev-light-harder/40 disabled:text-ev-dark-hard/40`,
   },
   solid: {
     primary: `${baseStyles} bg-ev-primary hover:bg-ev-primary-hard pressed:bg-ev-primary-harder text-ev-light disabled:bg-ev-primary/40`,
     secondary: `${baseStyles} bg-ev-secondary hover:bg-ev-secondary-hard pressed:bg-ev-primary-harder text-ev-light disabled:bg-ev-secondary-hard/40`,
     destructive: `${baseStyles} bg-ev-destructive hover:bg-ev-destructive-hard pressed:bg-ev-destructive-harder text-ev-light disabled:bg-ev-destructive-hard/40`,
     foreground: `${baseStyles} bg-ev-dark text-ev-light hover:bg-ev-dark-hard pressed:bg-ev-dark-harder dark:bg-ev-light dark:text-ev-dark dark:hover:bg-ev-light-hard  dark:pressed:bg-ev-light-harder disabled:bg-ev-dark-hard/40`,
+    background: `${baseStyles} bg-ev-light text-ev-dark hover:text-ev-dark-hard pressed:text-ev-dark-harder dark:text-ev-light dark:bg-ev-dark dark:hover:text-ev-light-hard  dark:pressed:text-ev-light-harder disabled:text-ev-dark-hard/40`,
   },
 };
 

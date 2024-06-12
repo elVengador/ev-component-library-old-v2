@@ -25,8 +25,8 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Solid: Story = {
   args: {
-    color: "primary",
-    variant: "solid",
+    // color: "primary",
+    // variant: "solid",
     children: "Click here",
     onPress: () => console.log("clicked!!"),
   },
