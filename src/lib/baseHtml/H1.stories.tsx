@@ -12,15 +12,15 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const H1Title: Story = {
+export const H1WithoutHashtag: Story = {
   args: {
-    children: "H1 title",
+    children: "H1 without hashtag",
   },
 };
 
-export const H1Header: Story = {
+export const H1WithHashtag: Story = {
   args: {
-    children: "H1 title",
+    children: "H1 with hashtag",
     id: "h1-title",
   },
 };
