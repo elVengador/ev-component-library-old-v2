@@ -1,18 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import { Ul } from "./Ul";
+import { Ol } from "./Ol";
 
 const meta = {
-  title: "BaseHtml/Ul",
-  component: Ul,
+  title: "BaseHtml/Ol",
+  component: Ol,
   parameters: {},
   tags: ["autodocs"],
-} satisfies Meta<typeof Ul>;
+} satisfies Meta<typeof Ol>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const UnorderedList: Story = {
+export const OrderedList: Story = {
   args: {
     children: (
       <>

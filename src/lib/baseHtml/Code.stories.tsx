@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Code } from "./BaseHtml";
+import { Code } from "./Code";
 
 const meta = {
   title: "BaseHtml/Code",

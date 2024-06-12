@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { A } from "./BaseHtml";
+import { A } from "./A";
 
 const meta = {
   title: "BaseHtml/A",
@@ -12,7 +12,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const PreText: Story = {
+export const AnchorDefault: Story = {
   args: {
     children: "Jimy Nicanor",
     href: "http://jimynicanor.com",
