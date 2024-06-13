@@ -6,8 +6,8 @@ export type Img = ComponentPropsWithoutRef<"img">;
 export const Img = ({ className, ...props }: Img) => {
   return (
     <img
-      {...props}
       loading="lazy"
+      {...props}
       className={twMerge("rounded-lg", className)}
     />
   );
