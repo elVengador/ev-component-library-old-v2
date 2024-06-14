@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { P } from "./BaseHtml";
+import { P } from "./P";
 
 const meta = {
   title: "BaseHtml/P",

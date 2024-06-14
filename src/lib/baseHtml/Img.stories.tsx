@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Img } from "./BaseHtml";
+import { Img } from "./Img";
 
 const meta = {
   title: "BaseHtml/Img",
