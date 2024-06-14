@@ -18,7 +18,7 @@ const preview: Preview = {
     (Story) => (
       <div
         style={{ padding: "20px", display: "grid", placeItems: "center" }}
-        className="bg-ev-light dark:bg-ev-dark"
+        className="bg-ev-dark dark:bg-ev-dark"
       >
         {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
         <Story />
