@@ -1,6 +1,6 @@
 import { AriaButtonOptions } from 'react-aria';
 import { AriaLinkOptions } from 'react-aria';
-import type { AriaTextFieldProps } from 'react-aria';
+import { AriaTextFieldProps } from 'react-aria';
 import { ButtonHTMLAttributes } from 'react';
 import { ComponentPropsWithoutRef } from 'react';
 import { DetailedHTMLProps } from 'react';
@@ -21,11 +21,11 @@ export declare type BlockquoteProps = ComponentPropsWithoutRef<"blockquote"> & {
 };
 
 export declare const Button: ForwardRefExoticComponent<AriaButtonOptions<"button"> & Omit<DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, "ref"> & {
-    variant?: ButtonVariant | undefined;
-    color?: ButtonColor | undefined;
+variant?: ButtonVariant | undefined;
+color?: ButtonColor | undefined;
 } & RefAttributes<HTMLButtonElement>>;
 
-declare type ButtonColor = "primary" | "secondary" | "destructive" | "foreground";
+declare type ButtonColor = "primary" | "secondary" | "destructive" | "foreground" | "background";
 
 declare type ButtonColor_2 = "primary" | "secondary" | "destructive" | "foreground";
 
@@ -50,10 +50,6 @@ declare type CollapsibleProps = {
     unmountInvisibleChildren?: boolean;
 };
 
-export declare const H1: ({ children, className, ...props }: H1Props) => JSX_2.Element;
-
-export declare type H1Props = ComponentPropsWithoutRef<"h1">;
-
 export declare const H2: ({ children, className, ...props }: H2Props) => JSX_2.Element;
 
 export declare type H2Props = ComponentPropsWithoutRef<"h2">;
@@ -74,9 +70,13 @@ export declare const H6: ({ children, className, ...props }: H6Props) => JSX_2.E
 
 export declare type H6Props = ComponentPropsWithoutRef<"h6">;
 
+export declare const Hashtag: ({ id }: {
+    id: string;
+}) => JSX_2.Element;
+
 export declare const IconButton: ForwardRefExoticComponent<AriaButtonOptions<"button"> & Omit<DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, "ref"> & {
-    variant?: ButtonVariant_2 | undefined;
-    color?: ButtonColor_2 | undefined;
+variant?: ButtonVariant_2 | undefined;
+color?: ButtonColor_2 | undefined;
 } & RefAttributes<HTMLButtonElement>>;
 
 export declare type IconButtonProps = AriaButtonOptions<"button"> & ComponentPropsWithoutRef<"button"> & {
