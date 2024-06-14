@@ -5,6 +5,7 @@ type CollapsibleProps = {
   children: ReactNode;
   unmountInvisibleChildren?: boolean;
 };
+
 export const Collapsible = ({
   title,
   children,
