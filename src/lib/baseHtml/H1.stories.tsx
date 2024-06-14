@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { H1 } from "./BaseHtml";
+import { H1 } from "./H1";
 
 const meta = {
   title: "BaseHtml/H1",
@@ -13,6 +13,12 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const H1Title: Story = {
+  args: {
+    children: "H1 title",
+  },
+};
+
+export const H1Header: Story = {
   args: {
     children: "H1 title",
     id: "h1-title",

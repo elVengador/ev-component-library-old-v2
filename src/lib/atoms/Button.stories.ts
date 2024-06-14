@@ -13,10 +13,18 @@ const meta = {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
-  // argTypes: {
-  //   variant: { control: 'color' },
-  //   color:{control:}
-  // },
+  argTypes: {
+    color: {
+      options: [
+        "primary",
+        "secondary",
+        "destructive",
+        "foreground",
+        "background",
+      ],
+      control: { type: "radio" },
+    },
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -25,8 +33,6 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Solid: Story = {
   args: {
-    color: "primary",
-    variant: "solid",
     children: "Click here",
     onPress: () => console.log("clicked!!"),
   },

@@ -7,18 +7,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ComponentPropsWithoutRef } from "react";
 import { twMerge } from "tailwind-merge";
 
-export type H1Props = ComponentPropsWithoutRef<"h1">;
-export const H1 = ({ children, className, ...props }: H1Props) => {
-  return (
-    <h1
-      {...props}
-      className={twMerge("text-ev-primary text-6xl font-semibold", className)}
-    >
-      <span>{children}</span>
-      {props.id && <Hashtag id={props.id} />}
-    </h1>
-  );
-};
+// export type H1Props = ComponentPropsWithoutRef<"h1">;
+// export const H1 = ({ children, className, ...props }: H1Props) => {
+//   return (
+//     <h1
+//       {...props}
+//       className={twMerge("text-ev-primary text-6xl font-semibold", className)}
+//     >
+//       <span>{children}</span>
+//       {props.id && <Hashtag id={props.id} />}
+//     </h1>
+//   );
+// };
 
 export type H2Props = ComponentPropsWithoutRef<"h2">;
 export const H2 = ({ children, className, ...props }: H2Props) => {
@@ -230,7 +230,7 @@ export const A = ({ className, children, ...props }: AProps) => (
   </a>
 );
 
-const Hashtag = ({ id }: { id: string }) => (
+export const Hashtag = ({ id }: { id: string }) => (
   <a href={`#${id}`} className="px-2 text-ev-primary/50 hover:text-ev-primary">
     #
   </a>
