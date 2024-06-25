@@ -30,6 +30,7 @@ export const Link = ({
 }: LinkProps) => {
   const ref = useRef<HTMLAnchorElement>(null);
   const { linkProps } = useLink(props, ref);
+
   return (
     <a
       ref={ref}

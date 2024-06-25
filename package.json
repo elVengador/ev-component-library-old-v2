@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "@react-aria/utils": "^3.23.2",
+    "clsx": "^2.1.1",
     "postcss-dark-theme-class": "^1.2.1",
     "react-aria": "^3.32.1"
   }
