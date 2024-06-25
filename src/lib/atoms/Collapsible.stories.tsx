@@ -12,7 +12,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const CollapsibleDefault: Story = {
+export const Default: Story = {
   args: {
     title: "Title",
     children: (
