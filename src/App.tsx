@@ -1,4 +1,9 @@
+import { Item } from "react-stately";
+import { List } from "./lib/atoms/List";
+
 function App() {
+  const items: { label: string; value: string }[] = [];
+
   return (
     <main className="py-2 px-5">
       <h1 className="font-bold">Components</h1>
@@ -15,6 +20,12 @@ function App() {
         <li>Grid List: not review</li>
         <li></li>
       </ol>
+      <List>
+        <Item>1</Item>
+        <Item>2</Item>
+        <Item>3</Item>
+      </List>
+      {/* <List items={items}>{(i) => <li>{i.label}</li>}</List> */}
     </main>
   );
 }
