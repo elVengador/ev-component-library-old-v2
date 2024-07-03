@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { List } from "./List";
+import { Item } from "react-stately";
 
 const meta = {
   title: "Atoms/List",
@@ -14,8 +15,7 @@ type Story = StoryObj<typeof meta>;
 
 export const DefaultList: Story = {
   args: {
-    // children: '['orange', 'pineapple']'
-    // items:['orange', 'pineapple']
-    
+    children: [1, 2, 3].map((c) => <Item>{c}</Item>),
+    label: "list example",
   },
 };
